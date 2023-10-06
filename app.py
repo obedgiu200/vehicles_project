@@ -25,10 +25,11 @@ if high_pricing:
 else:
     filtered_data=data[data.price.isin(actual_range)]
 
-st.write('Here are your options with split by model')
 
 
-fig = px.scatter(filtered_data, x="model")
+st.write('Here are your options with split by type')
+
+fig = px.scatter(filtered_data, x='type',y='price')
 st.plotly_chart(fig)
 
 st.write('Determine the condition of filtered vehicles')
