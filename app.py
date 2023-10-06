@@ -18,11 +18,11 @@ price_range = st.slider(
 
 actual_range=list(range(price_range[0],price_range[1]+1))
 
-high_rating = st.checkbox('only high rating')
+high_pricing= st.checkbox('only high pricing')
 
-if high_rating:
+if high_pricing:
     filtered_data=[data.price.isin(actual_range)]
-    filtered_data=filtered_data[data.rating>=4.5]
+    filtered_data=filtered_data[data.pricing>=250000]
 else:
     filtered_data=data[data.price.isin(actual_range)]
 
