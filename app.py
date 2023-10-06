@@ -2,8 +2,6 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
-from high_pricing import high_pricing
-
 data=pd.read_csv('vehicles_us.csv')
 
 
@@ -19,6 +17,7 @@ price_range = st.slider(
      value=(1,375000))
 
 actual_range=list(range(price_range[0],price_range[1]+1))
+high_pricing = st.checkbox('only high pricing')
 
 if high_pricing:
     filtered_data=[data.price.isin(actual_range)]
